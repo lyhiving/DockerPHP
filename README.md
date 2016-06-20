@@ -14,27 +14,27 @@ Docker容器化技术在过去的2015年得到了大面积的普及应用，特�
 
 ###基础目录
 
-- ~/dvwa/data  		存放MySQL数据库
-- ~/dvwa/htdocs 	项目代码
-- ~/dvwa/log		存放所有输出log
+- ~/data/data  		存放MySQL数据库
+- ~/data/wwwroot 	项目代码
+- ~/data/log		存放所有输出log
 
 ###从代码仓库构建
 
 ```
 cd ~
-git clone https://github.com/MarkThink/DockerPHP.git dvwa
+git clone https://github.com/MarkThink/DockerPHP.git data
 ```
 
 ##创建这些目录
 
 ```
-mkdir ~/dvwa ~/dvwa/data ~/dvwa/data/mysql ~/dvwa/log ~/dvwa/log/nginx ~/dvwa/log/php ~/dvwa/htdocs
+mkdir ~/data ~/data/data ~/data/data/mysql ~/data/log ~/data/log/nginx ~/data/log/php ~/data/wwwroot
 ```
 
 ##下载镜像及构建
 
 ```
-cd ~/dvwa/htdocs/dvawfiles
+cd ~/data/wwwroot/lnmp
 make pull
 make dl
 make build
@@ -43,8 +43,8 @@ make build
 ##下载代码
 
 ```
-cd ~/dvwa/htdocs
-git clone https://github.com/MarkThink/DVWA.git dvwa_app
+cd ~/data/wwwroot
+git clone https://github.com/MarkThink/DVWA.git data_app
 ```
 
 
@@ -60,7 +60,7 @@ git clone https://github.com/MarkThink/DVWA.git dvwa_app
 ```
 sudo vi /etc/hosts
 
-192.168.99.100	www.dvwa.com
+192.168.99.100	www.data.com
 ```
 
 ###Happly Enjoy!

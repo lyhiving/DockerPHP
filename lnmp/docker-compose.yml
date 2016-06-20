@@ -5,7 +5,7 @@ nginx:
   links:
     - "php"
   volumes:
-    - ~/dvwa:/dvwa
+    - ~/data:/data
 
 php:
   build: ./php
@@ -16,16 +16,16 @@ php:
     - "mysql"
     - "redis"
   volumes:
-    - ~/dvwa:/dvwa
+    - ~/data:/data
 
 mysql:
   build: ./mysql
   ports:
     - "3306:3306"
   volumes:
-    - ~/dvwa/data/mysql:/var/lib/mysql
+    - ~/data/data/mysql:/var/lib/mysql
   environment:
-    MYSQL_ROOT_PASSWORD: 123456
+    MYSQL_ROOT_PASSWORD: root
 
 redis:
   build: ./redis

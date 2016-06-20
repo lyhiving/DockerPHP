@@ -39,11 +39,11 @@ ADD php-fpm.conf /usr/local/etc/php-fpm.conf
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
-WORKDIR /dvwa
+WORKDIR /data
 
 # Write Permission
 RUN usermod -u 1000 www-data
 
 # php-fpm:8000 xdebug:9000
 EXPOSE 8000 9000
-VOLUME ["/dvwa"]
+VOLUME ["/data"]
